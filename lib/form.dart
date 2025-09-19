@@ -23,21 +23,26 @@ class _formexampleState extends State<FormExample>{
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),labelText: "enter your name"),
+                decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                labelText: "Enter your name",
+                ),
                 validator: (value) {
                   if(value==null || value.isEmpty){
-                    return "please enter your name";
+                    return "Please enter your name";
                   }
                   return null;
                 },
               ),
               SizedBox(height: 15,),
               TextFormField(
-                decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),labelText: "enter your email"),
+                decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                labelText: "Email ID",
+                hintText: "Example@Email.com"
+                ),
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
                   if(value==null || !RegExp(r'\S+@\S+\.\S+').hasMatch(value)){
-                    return "enter a valid email";
+                    return "Enter a valid email";
                   }
                   return null;
                 },
